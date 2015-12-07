@@ -32,3 +32,9 @@ options = {
 Make sure you are pointing to the right IP of you Matrox Monarch HD or HDX
 
 You can select, the `hdx` option with `true` or `false`
+
+# TODO
+
+[ ] Implement full API support for HDX model
+[ ] Make it a npm module
+[ ] Make it a global command-line controller
