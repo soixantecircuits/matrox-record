@@ -7,7 +7,7 @@ var colors = require('colors')
 var inquirer = require('inquirer')
 var options = {
     timeout: 3000,
-    permanentTestInterval: 60000,
+    permanentTestInterval: 30000,
     recordDuration: 15000,
     hdx: true
   }
@@ -46,7 +46,7 @@ var permanentTest
         if (!error && response.statusCode == 200) {
           console.log('Recording: ' + body.green)
           setTimeout(function () {
-            stopRecord()
+            stopRecord(encodeIndex)
           }, options.recordDuration)
         } else {
           console.log('Error, starting record: ' + error.red)
