@@ -1,3 +1,5 @@
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 # Matrox Monarch record
 
 Interactive command-line based on the following documentation:
@@ -27,11 +29,15 @@ options = {
   },
 ```
 
+Configure a remote point for NFS, on Ubuntu `14.04` the good guide is here: https://help.ubuntu.com/14.04/serverguide/network-file-system.html
+
 4. And start with: `npm start`
 
 Make sure you are pointing to the right IP of you Matrox Monarch HD or HDX
 
 You can select, the `hdx` option with `true` or `false`
+
+
 
 # TODO
 
