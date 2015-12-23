@@ -15,7 +15,7 @@ var encoderOptions = ['StartRecording', 'StartEncoder1', 'StartEncoder2', 'Start
 var stopOptions = ['StartRecording', 'StopEncoder1', 'StopEncoder2', 'StopBothEncoders']
 var permanentTest
 
-  getStatus = function () {
+var getStatus = function () {
     var url = secureurl.replace('<command>', 'GetStatus')
     console.log(url)
     request({
@@ -33,9 +33,9 @@ var permanentTest
         }
       }
     })
-  },
+  }
 
-  startRecord = function (encodeIndex) {
+var startRecord = function (encodeIndex) {
     if (encodeIndex < encoderOptions.length && encodeIndex > -1) {
       var url = secureurl.replace('<command>', encoderOptions[encodeIndex])
       console.log('Start record with:', url)
@@ -55,9 +55,9 @@ var permanentTest
     } else {
       console.log('the stopOptions is too short or too long...')
     }
-  },
+  }
 
-  stopRecord = function (stopIndex) {
+var stopRecord = function (stopIndex) {
     if (stopIndex < stopOptions.length && stopIndex > -1) {
       var url = secureurl.replace('<command>', stopOptions[stopIndex])
       console.log('Stop record with:', url)
@@ -74,20 +74,20 @@ var permanentTest
     } else {
       console.log('the stopOptions is too short or too long...')
     }
-  },
+  }
 
-  testCall = function (optionIndex) {
+var  testCall = function (optionIndex) {
     startRecord(optionIndex)
-  },
+  }
 
-  runPermanentTest = function (optionsNumber) {
+var runPermanentTest = function (optionsNumber) {
     clearInterval(permanentTest)
     permanentTest = setInterval(function () {
       testCall(optionsNumber)
     }, options.permanentTestInterval)
-  },
+  }
 
-  stopPermanenTest = function () {
+var stopPermanenTest = function () {
     clearInterval(permanentTest)
   }
 
@@ -107,7 +107,7 @@ var questions = [
   }
 ]
 
-function ask () {
+var ask = function () {
   inquirer.prompt(questions, function (answers) {
     if (answers.command === 'Exit') {
       process.exit()
